@@ -11,7 +11,7 @@ use hmmmm::{Hmm, algorithms::Viterbi};
 use hmmmm_derive::{State, Observation};
 
 #[repr(u8)]
-#[derive(Debug, Clone, Copy, State)]
+#[derive(State)]
 enum Season {
   Spring,
   Summer,
@@ -20,7 +20,7 @@ enum Season {
 }
 
 #[repr(u8)]
-#[derive(Debug, Clone, Copy, Observation)]
+#[derive(Observation)]
 enum Weather {
   ClearSky,
   Rain,

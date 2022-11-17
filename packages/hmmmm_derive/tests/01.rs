@@ -4,7 +4,7 @@ use hmmmm_derive::{Observation, State};
 #[test]
 pub fn test_1() {
   #[repr(u8)]
-  #[derive(Debug, Clone, Copy, PartialEq, State)]
+  #[derive(Debug, PartialEq, State)]
   #[allow(dead_code)]
   enum Season {
     Spring,
@@ -14,7 +14,7 @@ pub fn test_1() {
   }
 
   #[repr(u8)]
-  #[derive(Debug, Clone, Copy, Observation)]
+  #[derive(Debug, Observation)]
   #[allow(dead_code)]
   enum Weather {
     ClearSky,
