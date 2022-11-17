@@ -1,9 +1,16 @@
 [package]
 name = "hmmmm"
 description = "Performant and easy-to-use hidden Markov models"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 license = "MIT"
+documentation = "https://docs.rs/hmmmm"
+homepage = "https://github.com/dangreco/hmmmm"
+repository = "https://github.com/dangreco/hmmmm"
+authors = ["Dan Greco <dan.greco@live.com>"]
+readme = "README.md"
+categories = ["mathematics", "science"]
+keywords = ["markov", "hmm", "viterbi"]
 
 [lib]
 doctest = false
