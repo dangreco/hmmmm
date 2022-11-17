@@ -1,7 +1,9 @@
 [package]
 edition = "2021"
 name = "hmmmm_derive"
+description = "Derive macros for the hmmmm crate."
 version = "0.1.0"
+license = "MIT"
 
 [lib]
 name = "hmmmm_derive"
