@@ -3,6 +3,7 @@ use rand::prelude::*;
 
 use crate::prelude::{MapEstimate, Observation, State};
 
+/// The main hidden Markov model data structure
 #[allow(dead_code)]
 pub struct Hmm<S, O>
 where
