@@ -18,3 +18,11 @@ pub mod prelude;
 pub mod utils;
 
 pub use hmm::*;
+
+#[cfg(feature = "hmmmm_derive")]
+#[allow(unused_imports)]
+#[macro_use]
+extern crate hmmmm_derive;
+#[cfg(feature = "hmmmm_derive")]
+#[doc(hidden)]
+pub use hmmmm_derive::*;

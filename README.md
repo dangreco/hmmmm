@@ -13,6 +13,12 @@ Yet another aptly-named Hidden-Markov Model library for Rust.
 
 ## Usage
 
+### Installation
+
+```sh
+cargo add hmmmm --features derive
+```
+
 
 ### States + Observations
 
