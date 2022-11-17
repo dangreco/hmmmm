@@ -1,0 +1,16 @@
+[package]
+edition = "2021"
+name = "hmmmm_derive"
+version = "0.1.0"
+
+[lib]
+name = "hmmmm_derive"
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1.0"
+quote = "1.0"
+syn = {version = "1.0", features = ["parsing", "extra-traits"]}
+
+[dev-dependencies]
+hmmmm = {path = "../hmmmm"}
