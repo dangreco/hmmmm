@@ -99,7 +99,7 @@ input sequence of observations.
 
 **Input:** the sequence of observations - `&Vec<O>`
 
-**Output:** a tuple containing the probability of the MAP hidden state sequence and the corresponding hidden state sequence - `(f64, Vec<S>)`
+**Output:** a tuple containing the log (base 2) probability of the MAP hidden state sequence and the corresponding hidden state sequence - `(f64, Vec<S>)`
 
 **Example:**
 ```rust
@@ -107,4 +107,11 @@ input sequence of observations.
 
 let signal = vec![Feeling::Normal, Feeling::Cold, Feeling::Dizzy];
 let (pr, sequence) = hmm.map_estimate::<Viterbi>(&signal);
+
+/*
+
+pr = −6.04739805022
+sequence = [Condition::Healthy, Condition::Healthy, Condition::Healthy]
+
+*/
 ```
