@@ -36,7 +36,7 @@ where
           .unwrap();
 
         probabilities[i][j] = p;
-        traces[i][j] = k;
+        traces[i][j] = k as u8;
       }
     }
 
@@ -46,11 +46,11 @@ where
       .unwrap();
 
     let mut sequence = Vec::new();
-    let mut k = k;
+    let mut k = k as u8;
 
     for j in 0..signal.len() {
-      sequence.insert(0, S::from_usize(k));
-      k = traces[k][j];
+      sequence.insert(0, S::from_u8(k));
+      k = traces[k as usize][j];
     }
 
     (p, sequence)
@@ -87,6 +87,14 @@ mod tests {
       fn from_usize(value: usize) -> Self {
         [Self::Healthy, Self::Fever][value]
       }
+
+      fn as_u8(&self) -> u8 {
+        *self as u8
+      }
+
+      fn from_u8(value: u8) -> Self {
+        Self::from_usize(value as usize)
+      }
     }
 
     #[repr(u8)]
@@ -107,6 +115,14 @@ mod tests {
 
       fn from_usize(value: usize) -> Self {
         [Self::Normal, Self::Cold, Self::Dizzy][value]
+      }
+
+      fn as_u8(&self) -> u8 {
+        *self as u8
+      }
+
+      fn from_u8(value: u8) -> Self {
+        Self::from_usize(value as usize)
       }
     }
 
@@ -146,6 +162,14 @@ mod tests {
       fn from_usize(value: usize) -> Self {
         [Self::Spring, Self::Summer, Self::Fall, Self::Winter][value]
       }
+
+      fn as_u8(&self) -> u8 {
+        *self as u8
+      }
+
+      fn from_u8(value: u8) -> Self {
+        Self::from_usize(value as usize)
+      }
     }
 
     #[repr(u8)]
@@ -167,6 +191,14 @@ mod tests {
 
       fn from_usize(value: usize) -> Self {
         [Self::ClearSky, Self::Rain, Self::Snow, Self::Lightning][value]
+      }
+
+      fn as_u8(&self) -> u8 {
+        *self as u8
+      }
+
+      fn from_u8(value: u8) -> Self {
+        Self::from_usize(value as usize)
       }
     }
 

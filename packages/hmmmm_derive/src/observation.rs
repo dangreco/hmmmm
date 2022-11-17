@@ -61,6 +61,14 @@ pub(crate) fn derive_observation_inner(ast: &DeriveInput) -> syn::Result<TokenSt
           _ => panic!()
         }.unwrap()
       }
+
+      fn as_u8(&self) -> u8 {
+        *self as u8
+      }
+
+      fn from_u8(value: u8) -> Self {
+        Self::from_usize(value as usize)
+      }
     }
   })
 }
