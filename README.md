@@ -111,7 +111,7 @@ let (pr, sequence) = hmm.map_estimate::<Viterbi>(&signal);
 /*
 
 pr = −6.04739805022
-sequence = [Condition::Healthy, Condition::Healthy, Condition::Healthy]
+sequence = [Condition::Healthy, Condition::Healthy, Condition::Fever]
 
 */
 ```
