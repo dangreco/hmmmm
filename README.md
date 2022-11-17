@@ -1,4 +1,4 @@
-# hmmmm
+# hmmmm 🤔
 
 Yet another aptly-named Hidden-Markov Model library for Rust.
 
@@ -36,7 +36,7 @@ pub fn main() {
     [90. / 91., 1. / 91., 0., 0.], // ~ 91 days of spring
     [0., 92. / 93., 1. / 93., 0.], // ~ 93 days of summer
     [0., 0., 89. / 90., 1. / 90.], // ~ 90 days of fall
-    [1. / 91., 0., 0., 90. / 9.1], // ~ 91 days of winter
+    [1. / 91., 0., 0., 90. / 91.], // ~ 91 days of winter
   ];
   
   let pr_emission: [[f64; 4]; 4] = [
