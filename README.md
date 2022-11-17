@@ -31,6 +31,7 @@ by using the `#[derive(State)]` and `#[derive(Observation)]` proc macros in the 
 #[derive(State)]
 enum Condition {
   Healthy,
+  Fever,
 }
 
 #[repr(u8)]
