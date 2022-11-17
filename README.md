@@ -1,7 +1,9 @@
 # hmmmm 🤔 
 
 ![Crates.io](https://img.shields.io/crates/v/hmmmm)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dangreco/hmmmm/Rust/main)
 ![Crates.io](https://img.shields.io/crates/d/hmmmm)
+![Crates.io](https://img.shields.io/crates/l/hmmmm)
 
 Yet another aptly-named Hidden-Markov Model library for Rust.
 
