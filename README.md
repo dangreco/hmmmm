@@ -1,4 +1,7 @@
-# hmmmm 🤔
+# hmmmm 🤔 
+
+![Crates.io](https://img.shields.io/crates/v/hmmmm)
+![Crates.io](https://img.shields.io/crates/d/hmmmm)
 
 Yet another aptly-named Hidden-Markov Model library for Rust.
 
