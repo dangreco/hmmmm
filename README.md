@@ -7,7 +7,7 @@ Yet another aptly-named Hidden-Markov Model library for Rust.
 ## Examples:
 
 ```rust
-use hmmmm::{Hmm, algorithms::Viterbi};
+use hmmmm::{Hmm, algorithms::Viterbi, utils::*};
 use hmmmm_derive::{State, Observation};
 
 #[repr(u8)]
@@ -30,15 +30,27 @@ enum Weather {
 
 pub fn main() {
 
-  let pr_initial: [f64; 4] = [0.25, 0.25, 0.25, 0.25];
+  let pr_initial: [f64; 4] = pr_i(|season| match season {
+    Season::Spring => 91. / 365.,
+    Season::Summer => 93. / 365.,
+    Season::Fall => 90. / 365.,
+    Season::Winter => 91. / 365.,
+  });
   
-  let pr_transition: [[f64; 4]; 4] = [
-    [90. / 91., 1. / 91., 0., 0.], // ~ 91 days of spring
-    [0., 92. / 93., 1. / 93., 0.], // ~ 93 days of summer
-    [0., 0., 89. / 90., 1. / 90.], // ~ 90 days of fall
-    [1. / 91., 0., 0., 90. / 91.], // ~ 91 days of winter
-  ];
-  
+  let pr_transition: [[f64; 4]; 4] = pr_t(|a, b| match (a, b) {
+    (Season::Spring, Season::Spring) => 90. / 91.,
+    (Season::Spring, Season::Summer) => 1. / 91.,
+
+    (Season::Summer, Season::Summer) => 92. / 93.,
+    (Season::Summer, Season::Fall) => 1. / 93.,
+
+    (Season::Fall, Season::Fall) => 89. / 90.,
+    (Season::Fall, Season::Winter) => 1. / 90.,
+
+    (Season::Winter, Season::Winter) => 90. / 1.,
+    (Season::Winter, Season::Spring) => 1. / 90.,
+  });
+ 
   let pr_emission: [[f64; 4]; 4] = [
     [0.90, 0.08, 0.00, 0.02],
     [0.80, 0.12, 0.00, 0.08],
